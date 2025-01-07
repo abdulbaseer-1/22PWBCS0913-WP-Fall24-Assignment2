@@ -1,31 +1,32 @@
 {
-    "version": 2,
-    "name": "assignment-2",
-    "builds": [
-      {
-        "src": "backend/server.js",
-        "use": "@vercel/node"
-      },
-      {
-        "src": "frontend/package.json",
-        "use": "@vercel/static-build",
-        "config": {
-          "distDir": "frontend/dist"
-        }
+  "version": 2,
+  "name": "assignment-2",
+  "builds": [
+    {
+      "src": "backend/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "buildCommand": "cd frontend && npm install && npm run build",
+        "outputDirectory": "dist"
       }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "backend/server.js"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "frontend/dist/$1"
-      }
-    ],
-    "env": {
-      "MONGO_URI": "mongodb+srv://khanabdulbaseerkhanyousafzai:yLBxFcRNtnzWl3eK@cluster0.duqoj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-      "JWT_SECRET": "07a10067d1de8401d6b7967b2036b34a649da6fee67b4e8682f4a42253fa6f64f526ef19b0e5132045cefe89491e3cc80e1172959551a78aa18edb717bb30a10"
     }
-  }  
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "frontend/dist/$1"
+    }
+  ],
+  "env": {
+    "MONGO_URI": "mongodb+srv://khanabdulbaseerkhanyousafzai:yLBxFcRNtnzWl3eK@cluster0.duqoj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "JWT_SECRET": "07a10067d1de8401d6b7967b2036b34a649da6fee67b4e8682f4a42253fa6f64f526ef19b0e5132045cefe89491e3cc80e1172959551a78aa18edb717bb30a10"
+  }
+}
