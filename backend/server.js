@@ -15,7 +15,7 @@ import userRoutes from './routes/userRoutes.js';
     app.use('/api', userRoutes);
 
     //mongo connection
-    const URI = 'mongodb://localhost:27017/assignment2';
+    const URI = 'mongodb+srv://khanabdulbaseerkhanyousafzai:yLBxFcRNtnzWl3eK@cluster0.duqoj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
     mongoose
         .connect(URI)
         .then(() => {
