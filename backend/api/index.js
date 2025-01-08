@@ -22,6 +22,10 @@ import { fileURLToPath } from 'url';
     //routes
     app.use('/api', userRoutes);
 
+    app.get('/', (req, res) =>{
+        res.status(200).json("Deployment successful");
+    });
+
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname, 'dist', 'index.html'));
       });
