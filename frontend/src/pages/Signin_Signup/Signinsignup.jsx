@@ -3,7 +3,7 @@ import './Signinsignup.css'
 import axios from 'axios';
 
 const Signinsignup = () => {
-    const backendURL = "22-pwbcs-0913-wp-fall24-assignment2.vercel.app";
+    const backendURL = "https://22-pwbcs-0913-wp-fall24-assignment2.vercel.app";
 
     const [action, setAction] = useState("Sign Up");
     const [username, setUsername] = useState('');
