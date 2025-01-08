@@ -3,6 +3,8 @@ import './Signinsignup.css'
 import axios from 'axios';
 
 const Signinsignup = () => {
+    const URL = "https://assignment2-backend-ecru.vercel.app";
+
     const [action, setAction] = useState("Sign Up");
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
@@ -22,7 +24,7 @@ const Signinsignup = () => {
     // login logic
     const handleLogin = async () => {
         try {
-            const response = await axios.post('http://localhost:8080/api/signin', {
+            const response = await axios.post(`${URL}/api/signin`, {
                 email, // Changed from username to email
                 password,
             }, {
@@ -57,7 +59,7 @@ const Signinsignup = () => {
         }
 
         try {
-            const response = await axios.post("http://localhost:8080/api/signup", {
+            const response = await axios.post(`${URL}/api/signup`, {
                 username,
                 email,
                 password
@@ -85,7 +87,7 @@ const Signinsignup = () => {
                 return;
             }
 
-            const response = await axios.get('http://localhost:8080/api/protected', {
+            const response = await axios.get(`${URL}/api/protected`, {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
