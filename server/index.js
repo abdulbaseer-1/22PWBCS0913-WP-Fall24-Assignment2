@@ -5,7 +5,6 @@ import userRoutes from './routes/userRoutes.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-// const server = () => { // not removing b/c maybe i'll need it later for vercel and I am lazy so no rewrite.
     const app = express();
     const PORT = 8080;
 
@@ -44,9 +43,3 @@ import { fileURLToPath } from 'url';
         .catch((error) => {
             console.error('Failed to connect to the database:', error.message);
         });
-
-// };  //if you do it like thi i.e. by defining it as a function, you need an entry point , prefereably a second file.
-
-// server();
-
-// export default server;
