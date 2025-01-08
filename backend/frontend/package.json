@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "concurrently \"npm run backend\" \"npm run frontend\"",
-    "postinstall": "npm install --prefix backend/frontend",
+    "postinstall": "cd backend/frontend && npm install",
     "backend": "nodemon ./backend/server.js",
     "frontend": "vite"
   },
