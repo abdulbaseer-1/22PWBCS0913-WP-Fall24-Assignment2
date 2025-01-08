@@ -1,0 +1,29 @@
+{
+  "name": "assignment-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"nodemon ./backend/index.js\" \"npm run dev --prefix ./frontend\"",
+    "start": "node ./backend/index.js",
+    "build:frontend": "npm run build --prefix ./frontend",
+    "build": "npm run build:frontend"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "assignment-2": "file:",
+    "axios": "^1.7.9",
+    "bcrypt": "^5.1.1",
+    "concurrently": "^9.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-jwt": "^8.5.1",
+    "mongoose": "^8.9.3",
+    "nodemon": "^3.1.9",
+    "react-router-dom": "^7.1.1"
+  }
+}
